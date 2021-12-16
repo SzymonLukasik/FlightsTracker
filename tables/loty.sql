@@ -9,18 +9,33 @@ CREATE TABLE IF NOT EXISTS User (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS Comment (
+CREATE TABLE IF NOT EXISTS FlightComment (
     id          INTEGER  GENERATED ALWAYS AS IDENTITY START WITH 0, 
     user_id     INTEGER  NOT NULL REFERENCES User,
     post_date   DATETIME NOT NULL,
+    stars       INTEGER  CHECK (stars >= 0 && stars <= 5),
     contents    VARCHAR2(200),
+    flight     INTEGER NOT NULL REFERENCES Flight,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS CommentRating (
-    id          INTEGER  GENERATED ALWAYS AS IDENTITY START WITH 0,
+CREATE TABLE IF NOT EXISTS AirlineComment (
+    id          INTEGER  GENERATED ALWAYS AS IDENTITY START WITH 0, 
+    user_id     INTEGER  NOT NULL REFERENCES User,
+    post_date   DATETIME NOT NULL,
     stars       INTEGER  CHECK (stars >= 0 && stars <= 5),
-    num_reviews INTEGER  CHECK (num_reviews >= 0),
+    contents    VARCHAR2(200),
+    airline     INTEGER NOT NULL REFERENCES Airline,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS CompanyComment (
+    id          INTEGER  GENERATED ALWAYS AS IDENTITY START WITH 0, 
+    user_id     INTEGER  NOT NULL REFERENCES User,
+    post_date   DATETIME NOT NULL,
+    stars       INTEGER  CHECK (stars >= 0 && stars <= 5),
+    contents    VARCHAR2(200),
+    company     INTEGER NOT NULL REFERENCES CompensationCompany,
     PRIMARY KEY (id)
 );
 
@@ -50,23 +65,9 @@ CREATE TABLE IF NOT EXISTS CompensationCompany (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS CompanyRating (
-    id          INTEGER  GENERATED ALWAYS AS IDENTITY START WITH 0,
-    stars       INTEGER  CHECK (stars >= 0 && stars <= 5),
-    num_reviews INTEGER  CHECK (num_reviews >= 0),
-    PRIMARY KEY (id)
-);
-
 CREATE TABLE IF NOT EXISTS Airline (
     id            INTEGER GENERATED ALWAYS AS IDENTITY START WITH 0, 
     points_per_km INTEGER DEFAULT 0,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS AirlineRating (
-    id          INTEGER  GENERATED ALWAYS AS IDENTITY START WITH 0,
-    stars       INTEGER  CHECK (stars >= 0 && stars <= 5),
-    num_reviews INTEGER  CHECK (num_reviews >= 0),
     PRIMARY KEY (id)
 );
 
@@ -89,6 +90,7 @@ CREATE TABLE IF NOT EXISTS Flight (
     actual_off_block_time DATETIME NOT NULL, 
     filed_arrival_time    DATETIME NOT NULL, 
     actual_arrival_time   DATETIME NOT NULL,
+    operator              VARCHAR2(10) NOT NULL,
     actual_distance_flown INTEGER  NOT NULL CHECK (actual_distance_flown >= 0)
 );
 
