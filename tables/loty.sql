@@ -11,26 +11,32 @@ DROP TABLE Airline CASCADE CONSTRAINTS;
 DROP TABLE Airport CASCADE CONSTRAINTS;
 
 CREATE TABLE Airport (
-    id   INTEGER      CHECK (id >= 0) PRIMARY KEY,
-    city VARCHAR2(85) NOT NULL
+    id              VARCHAR2(4)  PRIMARY KEY, /* ICAO airport code */
+    airport_name    VARCHAR2(85) NOT NULL,
+    city            VARCHAR2(85) NOT NULL,
+    country         VARCHAR2(85) NOT NULL,
+    latitude        DECIMAL(8,6) NOT NULL,
+    longitude       DECIMAL(9,6) NOT NULL   
 );
 
 CREATE TABLE Airline (
-    id            INTEGER GENERATED ALWAYS AS IDENTITY START WITH 0 MINVALUE 0
-                  PRIMARY KEY, 
-    points_per_km INTEGER DEFAULT 0
+    id              VARCHAR2(3) PRIMARY KEY, /* ICAO airline designator */
+    airline_name    VARCHAR2(85) NOT NULL, 
+    country         VARCHAR2(85) NOT NULL,
+    points_per_km   INTEGER DEFAULT NULL
 );
 
 CREATE TABLE Flight (
     id /* ECTRL ID */     INTEGER  NOT NULL CHECK (id >= 0) PRIMARY KEY,
-    aof_dep               INTEGER  NOT NULL REFERENCES Airport,
-    aof_des               INTEGER  NOT NULL REFERENCES Airport,
+    aof_dep               VARCHAR2(4) NOT NULL REFERENCES Airport,
+    aof_des               VARCHAR2(4) NOT NULL REFERENCES Airport,
     filed_off_block_time  TIMESTAMP NOT NULL, 
     actual_off_block_time TIMESTAMP NOT NULL, 
     filed_arrival_time    TIMESTAMP NOT NULL, 
     actual_arrival_time   TIMESTAMP NOT NULL,
-    operator_id           INTEGER NOT NULL REFERENCES Airline,
+    operator_id           VARCHAR2(3) NOT NULL REFERENCES Airline,
     actual_distance_flown INTEGER NOT NULL CHECK (actual_distance_flown >= 0)
+    /* nautical miles */
 );
 
 CREATE TABLE Account (
@@ -58,7 +64,7 @@ CREATE TABLE AirlineComment (
     post_date  TIMESTAMP    NOT NULL,
     stars      INTEGER      CHECK (stars >= 0 AND stars <= 5),
     contents   VARCHAR2(200),
-    airline_id INTEGER      NOT NULL REFERENCES Airline
+    airline_id VARCHAR2(3)  NOT NULL REFERENCES Airline
 );
 
 CREATE TABLE CompensationCompany (
@@ -93,8 +99,8 @@ CREATE TABLE PlannedFlight (
     user_id    VARCHAR2(64) NOT NULL REFERENCES Account,
     dep_date   DATE         NOT NULL,
     arr_date   DATE         NOT NULL,
-    dep_aport  INTEGER      NOT NULL REFERENCES Airport,
-    arr_aport  INTEGER      NOT NULL REFERENCES Airport
+    dep_aport  VARCHAR2(4)  NOT NULL REFERENCES Airport,
+    arr_aport  VARCHAR2(4)  NOT NULL REFERENCES Airport
 );
 
 CREATE TABLE FlightAttendant (
