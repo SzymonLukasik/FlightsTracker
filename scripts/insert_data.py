@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 """ Script inserting data from .csv files to database."""
 
+# Following two lines are needed to import pandas on students
+import os
+os.environ["OPENBLAS_NUM_THREADS"] = "10"
+
 import sys
 import argparse
 import cx_Oracle
