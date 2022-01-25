@@ -6,8 +6,14 @@ use FlightsTracker\Router\Router as Router;
 
 abstract class BaseView {
 
+    public $data;
+
+    public function __construct($data = null) {
+        $this->data = $data;
+    }
+
     public function renderTemplate($path) {
-        $this->renderHeader();
+        $this->renderHeader($path);
         $this->renderHTML($path);
         $this->renderFooter();
     }
@@ -27,66 +33,24 @@ abstract class BaseView {
     /** Wyświetla kod HTML szablonu */
     public function renderHTML($path='') {
         $path = TEMPLATES_PATH . $path . '.php';
+        //print $path;
         if(is_file($path)) {
             require $path;
         } else {
-            throw new \Exception('Can not open template '.$name.' in: '.$path);
+            throw new \Exception('Can not open template: ' . $path);
         }        
     }
 
     /** Ładuje nagłówek strony */
-    public function renderHeader() {
-        return $this->renderHTML('header', 'front/');
+    public function renderHeader($path) {
+        $this->renderHTML('headers/head');
+        $header_type = $path == 'index' ? 'header' : 'sub-header';
+        $this->renderHTML('headers/' . $header_type);
     }
 
     /**
      * Ładuje stopkę strony */
     public function renderFooter() {
-        return $this->renderHTML('footer', 'front/');
-    }
-    
-    /**
-     * It sets data.
-     *
-     * @param string $name
-     * @param mixed $value
-     *
-     * @return void
-     */
-    public function set($name, $value) {
-        $this->$name=$value;
-    }
-    /**
-     * It sets data.
-     *
-     * @param string $name
-     * @param mixed $value
-     *
-     * @return void
-     */
-    public function __set($name, $value) {
-        $this->$name=$value;
-    }
-    /**
-     * It gets data.
-     *
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function get($name) {
-        return $this->$name;
-    }
-    /**
-     * It gets data.
-     *
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public function __get($name) {
-        if( isset($this->$name) )
-            return $this->$name;
-        return null;
+        return $this->renderHTML('footer');
     }
 }

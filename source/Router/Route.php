@@ -159,10 +159,12 @@ class Route
                 $data2['<' . $key . '>'] = $data[$key];
             }
             $url = str_replace(array('?', '(', ')'), array('', '', ''), $this->path);
-            return str_replace(array_keys($data2), $data2, $url);
+            $url = str_replace(array_keys($data2), $data2, $url);
+            return $url;
         } else {
-            $url=preg_replace("#<[a-zA-Z0-9]*>#", '', $this->path, 1);
-            return str_replace(array('?', '(', ')'), array('', '', ''), $url);
+            $url = preg_replace("#<[a-zA-Z0-9]*>#", '', $this->path, 1);
+            $url = str_replace(array('?', '(', ')'), array('', '', ''), $url);
+            return $url;
         }
     }
 } 

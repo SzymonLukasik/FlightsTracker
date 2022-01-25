@@ -8,8 +8,7 @@ class FlightController extends \FlightsTracker\Controller\BaseController {
     public function index() {
         $model = new \FlightsTracker\Model\FlightModel();
         $data = $model->getIndexData();
-        $view = new \FlightsTracker\View\FlightView();
-        //$view->articles = $articles;
+        $view = new \FlightsTracker\View\FlightView($data);
         $view->index();
     }
 

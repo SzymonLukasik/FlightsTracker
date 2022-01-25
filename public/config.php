@@ -26,28 +26,13 @@ function getTomlConfig(): array {
 }
 
 $config = getTomlConfig();
-define('DB_USERNAME', $config['usernmae']);
+define('DB_USERNAME', $config['username']);
 define('DB_PASSWORD', $config['password']);
 define('DSN', $config['dsn']);
 
 define('SRC_PATH', ROOT_PATH . 'source/');
 define('TEMPLATES_PATH', SRC_PATH . 'templates/');
 define('CONTROLLERS_PATH', SRC_PATH . 'Controller/');
-define('HTTP_SERVER', 'http://localhost/');
+define('HTTP_SERVER', 'http://localhost:' . $_SERVER['SERVER_PORT'] . '/');
 
-// try {
-//     $connection_string='mysql:host='.$config['host'].';port=8889'.';dbname='.$config
-//     ['dbname'];
-//     print($connection_string."\n");
-//     $conn = oci_connect($config['username'],$config['password'],"//labora.mimuw.edu.pl/LABS");
-//     if (!$conn) {
-//         echo "oci_connect failed\n";
-//         $e = oci_error();
-//         echo $e['message'];
-//     }
-//     $dbh = new PDO($connection_string, $config['username'], $config['password']);
-// } catch (PDOException $e) {
-//     print "Error!: " . $e->getMessage() . "<br/>";
-//     die();
-// }
 ?>
