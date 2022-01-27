@@ -126,7 +126,7 @@ nav .fas{
     }
 }
 
-/*-------- service --------*/
+/*-------- services --------*/
 .service{
     width: 80%;
     margin: auto;
@@ -182,7 +182,7 @@ h3{
     box-shadow: 0 0 20px 0px rgba(32, 66, 218, 0.9);
 }
 
-/*-------- testimonials --------*/
+/*-------- team --------*/
 .team{
     width: 80%;
     margin: auto;
@@ -223,7 +223,7 @@ h3{
     }
 }
 
-/*-------- testimonials --------*/
+/*-------- faculty --------*/
 .disclaimer{
     margin: 100px auto;
     width: 80%;

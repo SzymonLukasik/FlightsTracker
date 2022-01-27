@@ -7,6 +7,13 @@
                 <li><a href="<?php echo $this->generateUrl('flight/index'); ?>">Flight Data</a></li>
                 <li><a href="forum.php">Forum</a></li>
                 <li><a href="claim_tracker.php">ClaimTracker</a></li>
+                
+                <li><?php 
+                    if (isset($_SESSION['userloggedin']) && $_SESSION['userloggedin'])
+                        echo('<a href="' . $this->generateUrl('login/logout') . '">LOG OUT</a></li>');
+                    else
+                        echo('<a href="' . $this->generateUrl('login/index') . '">LOG IN</a></li>');
+                ?>
                 <li><a href="login.php">LOG IN</a></li>
             </ul>
         </div>

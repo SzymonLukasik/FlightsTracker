@@ -43,6 +43,30 @@ $collection->add(
             'id' => '\d+'
         )
     )
-)
+);
+
+$collection->add(
+    'login/index',
+    new Route(
+        HTTP_SERVER . "login/index",
+        array(
+            'file' => CONTROLLERS_PATH . 'LoginController.php',
+            'method' => 'index',
+            'class' => '\FlightsTracker\Controller\LoginController'
+        )
+    )
+);
+
+$collection->add(
+    'login/tryLogin',
+    new Route(
+        HTTP_SERVER . "login/index",
+        array(
+            'file' => CONTROLLERS_PATH . 'LoginController.php',
+            'method' => 'tryLogin',
+            'class' => '\FlightsTracker\Controller\LoginController'
+        )
+    )
+);
 
 ?>

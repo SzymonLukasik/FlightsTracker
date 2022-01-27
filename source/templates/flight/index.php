@@ -1,19 +1,19 @@
 <!------- Service-like flights statistics -------->
 <section class="statistics">
     <div class="row">
-        <div onclick="location.href='';" style="cursor: pointer;" class="service-col">
+        <div class="service-col">
             <h1><?php echo $this->data['n_flights']?></h1>
             <h2> 
                 registered flights
             </h2>
         </div>
-        <div onclick="location.href='';" style="cursor: pointer;" class="service-col">
+        <div class="service-col">
             <h1><?php echo $this->data['n_airports']?></h1>
             <h2> 
                 airports gathered 
             </h2>
         </div>
-        <div onclick="location.href='';" style="cursor: pointer;" class="service-col">
+        <div class="service-col">
             <h1><?php echo $this->data['n_countries']?></h1>
             <h2> 
                 countries covered
