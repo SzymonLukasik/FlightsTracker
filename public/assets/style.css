@@ -84,8 +84,14 @@ nav img{
 }
 
 nav .fa{
-    display: none;  /* TODO: find out why this doesn't work*/
+    display: none;  
 }
+
+nav .fas{
+    display: none;
+}
+
+
 
 @media(max-width: 700px){
     .text-box h1{
@@ -250,27 +256,31 @@ h3{
     width: 100%;
     text-align: center;
     padding: 30px 0;
+    position:absolute;
+    bottom:0;
 }
 .footer h4{
     margin-bottom: 25px;
-    margin-top: 20px;
     font-weight: 600;
+    position:absolute;
+    bottom:0;
 }
 
 /*---------------- Flight Data page ----------------*/
 .sub-header{
-    height: 50vh;
+    height: 15vh;
     width: 100%;
     background-image: 
         linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-        url(images/control_room.jpg);
+        url(images/banner.jpg);
     background-position: center;
     background-size: cover;
     text-align: center;
     color: #fff;
 }
 .sub-header h1{
-    margin-top: 100px;
+    margin-top: -105px;
+    font-size: 20px;
 }
 .about-us{
     width: 80%;
@@ -292,8 +302,58 @@ h3{
     padding: 15px 0 25px;
 }
 
+#flight_data {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+  
+  #flight_data td, #flight_data th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #flight_data tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #flight_data tr:hover {background-color: #ddd;}
+  
+  #flight_data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+/*-------- service --------*/
+.statistics{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 0px;
+}
+h1{
+    font-size: 56px;
+    font-weight: 1000;
+}
+h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+p{
+    color: rgb(0,0,0);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
 /*---------------- Subpages header ----------------*/
-.sub-header{
+/* .sub-header{
     height: 50vh;
     width: 100%;
     background-image: 
@@ -306,7 +366,7 @@ h3{
 }
 .sub-header h1{
     margin-top: 100px;
-}
+} */
 
 /*---------------- Flight Data page ----------------*/
 .flight-data{
@@ -327,6 +387,83 @@ h3{
 }
 .flight-data-col p{
     padding: 15px 0 25px;
+}
+
+form {
+    width  :90%;
+    height : 20%;
+    margin : 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+    background : #FFF;
+  
+    /* we create our grid */
+    display  : flex;
+    /* grid-gap : 10px;
+    grid-template-columns : repeat(2, 1fr);
+    grid-template-rows    : 10em 1em 1em 1em; */
+  }
+  label {
+    font-size: 15px;
+    border       : 1px solid #333;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  input {
+    font-size: 10px;
+    border       : 1px solid #333;
+    border-radius: 3px;
+    padding : 0 10px;
+    margin  : 0;
+    width   : 10%;
+    background : none;
+    
+  }
+  button {
+    padding      : 5px;
+    font         :  .6em sans-serif;
+    border       : 1px solid #333;
+    border-radius: 3px;
+    background   : none;
+    cursor       : pointer;
+    transform    : rotate(-1.5deg);
+  }
+  .ui-helper-hidden-accessible{
+    display:none !important;
+}
+  .ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+  .ui-menu .ui-menu-item a{
+    background:red;
+    height:10px;
+    font-size:8px;
 }
 
 /*---------------- ClaimTracker page ----------------*/

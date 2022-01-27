@@ -9,7 +9,7 @@ class HomepageView extends \FlightsTracker\View\BaseView {
     }
 
     public function index() {
-        $this->renderTemplate("index");
+        $this->renderTemplate("homepage/index");
     }
 }
 

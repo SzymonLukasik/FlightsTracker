@@ -2,123 +2,67 @@
 
 namespace FlightsTracker\Router;
 
-/**
- * Klasa Routera.
- * @package RacyMind\MVCWPraktyce\Engine\Router
- * @author Łukasz Socha <kontakt@lukasz-socha.pl>
- * @version 1.0
- */
 class Router
 {
-    /**
-     * @var String URL do przetworzenia
-     */
+    /** @var String URL do przetworzenia */
     protected $url;
-    /**
-     * @var array Zawiera objekt RouteCollecion.
-     */
+    
+    /** @var array Statczny objekt RouteCollection. */
     protected static $collection;
-    /**
-     * @var string Ścieżka do kontrolera
-     */
+    
+    /** @var string Ścieżka do kontrolera */
     protected $file;
-    /**
-     * @var string Nazwa klasy
-     */
+    
+    /**  @var string Nazwa klasy kontrolera */
+
     protected $class;
-    /**
-     * @var string Nazwa metody
-     */
+    
+    /** @var string Nazwa metody kontrolera */
     protected $method;
 
-    public function __construct($url, $collection = null)
-    {
-        if ($collection != null) {
-            Router::$collection = $collection;
+    /** Zapisuje URL z obciętym query stringiem. */
+    public function __construct($url) {
+        if (Router::$collection == null) {
+            throw new \Exception("Define routes collection before instantiating Router. ");
         }
         $url=explode('?', $url);
         $this->url = $url[0];
     }
 
-
-    /**
-     * @param array $collection
-     */
-    public function setCollection($collection)
-    {
+    public function setCollection($collection) {
         Router::$collection = $collection;
     }
 
-    /**
-     * @return array
-     */
-    public function getCollection()
-    {
+    public function getCollection() {
         return Router::$collection;
     }
 
-    /**
-     * @param string $class
-     */
-    public function setClass($class)
-    {
+    public function setClass($class) {
         $this->class = $class;
     }
 
-    /**
-     * @return string
-     */
-    public function getClass()
-    {
+    public function getClass() {
         return $this->class;
     }
 
-    /**
-     * @param string $file
-     */
-    public function setFile($file)
-    {
+    public function setFile($file) {
         $this->file = $file;
     }
 
-    /**
-     * @return string
-     */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
 
-    /**
-     * @param string $method
-     */
-    public function setMethod($method)
-    {
+
+    public function setMethod($method) {
         $this->method = $method;
     }
 
-    /**
-     * @return string
-     */
-    public function getMethod()
-    {
+    public function getMethod() {
         return $this->method;
     }
 
-
-    /**
-     * @param String $url
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-    }
-
-    /**
-     * @return String
-     */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
@@ -147,12 +91,8 @@ class Router
         return false;
     }
 
-    /**
-     * Szuka odpowiedniej reguły pasującej do URL. Jeżeli znajdzie zwraca true.
-     * @return bool
-     */
-    public function run()
-    {
+    /** Szuka odpowiedniej reguły pasującej do URL. Jeżeli znajdzie zwraca true. */
+    public function run() {
         foreach (Router::$collection->getAll() as $route) {
             if ($this->matchRoute($route)) {
                 $this->setGetData($route);

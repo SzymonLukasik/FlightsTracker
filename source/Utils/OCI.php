@@ -43,14 +43,13 @@ class OCI {
         return $nrows;
     }
 
-    /** Fetches scalar values. */
-    public function fetchScalar(string $sql, &$output) {
-        $nrows = $this->fetchAll($sql, $array, null, null, OCI_NUM);
-        if ($nrows == 0 ) 
-            throw new OCIFetchError("Fetched no data.\n");
-        if ($nrows > 1 || sizeof($array) > 1)
-            throw new OCIFetchError("Fetched data is non-scalar.");
-        $output = $array[0][0];
+    public function bindRows(
+        string $sql,
+        &$rows,
+        $offset,
+        $limit
+    ) {
+        $this->fetchAll($sql, $rows, $offset, $limit, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
     }
 
     public function bindCols(
@@ -66,7 +65,7 @@ class OCI {
         }
     }
 
-    public function bindColsFlat(
+    public function bindColsFlatten(
         string $sql,
         &...$vars
     ) {
@@ -77,22 +76,5 @@ class OCI {
     }
 
 }
-
-// $sql = 'SELECT COUNT(*) AS NUM_OF_FLIGHTS FROM Flight';
-        // $stid = oci_parse($this->oci->get(), $sql);
-        // oci_execute($stid);
-
-        // $nrows = $this->oci->fetchAll($sql, $arr);
-        // print_r($nrows . " " . $arr[0][0]);
-        // $nrows = oci_fetch_all($stid, $arr, null, null, OCI_FETCHSTATEMENT_BY_ROW + OCI_ASSOC);
-        // print_r($arr[0]);
-    
-        // while (($row = oci_fetch_array($stid)) != false) {
-        //     // Use the uppercase column names for the associative array indices
-        //     echo $row[0];
-        // }
-        
-
-        // oci_free_statement($stid);
 
 ?>

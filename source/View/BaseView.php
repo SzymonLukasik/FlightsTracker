@@ -8,21 +8,27 @@ abstract class BaseView {
 
     public $data;
 
+    private $renderHeadScript;
+
     public function __construct($data = null) {
         $this->data = $data;
     }
 
-    public function renderTemplate($path) {
+    public function renderTemplate($path, $renderHeadScript = null) {
+        $this->renderHeadScript = $renderHeadScript;
         $this->renderHeader($path);
-        $this->renderHTML($path);
+        $this->renderFile(TEMPLATES_PATH . $path);
         $this->renderFooter();
+    }
+
+    public function renderScript($path) {
+        $path = SCRIPTS_PATH . $path;
+        renderFile($path);
     }
 
     /** Generuje link. */
     public function generateUrl($name, $data=null) {
-        $router = new Router(
-            'http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]);
-        $collection = $router->getCollection();
+        $collection = Router::getCollection();
         $route=$collection->get($name);
         if (isset($route)) {
             return $route->generateUrl($data);
@@ -30,27 +36,28 @@ abstract class BaseView {
         return false;
     }
 
-    /** Wyświetla kod HTML szablonu */
-    public function renderHTML($path='') {
-        $path = TEMPLATES_PATH . $path . '.php';
-        //print $path;
+    /** Wyświetla kod pliku */
+    public function renderFile($path) {
+        $path = $path . '.php';
         if(is_file($path)) {
             require $path;
         } else {
-            throw new \Exception('Can not open template: ' . $path);
+            throw new \Exception('Can not open file: ' . $path);
         }        
     }
 
     /** Ładuje nagłówek strony */
     public function renderHeader($path) {
-        $this->renderHTML('headers/head');
-        $header_type = $path == 'index' ? 'header' : 'sub-header';
-        $this->renderHTML('headers/' . $header_type);
+        $headers_path = TEMPLATES_PATH . 'headers/';
+        $this->renderFile($headers_path . 'head');
+
+        $header_type = ($path == 'homepage/index' ? 'header' : 'sub-header');
+        $this->renderFile($headers_path . $header_type);
     }
 
     /**
      * Ładuje stopkę strony */
     public function renderFooter() {
-        return $this->renderHTML('footer');
+        return $this->renderFile(TEMPLATES_PATH . 'footer');
     }
 }
