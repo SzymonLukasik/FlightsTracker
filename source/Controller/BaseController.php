@@ -25,7 +25,7 @@ abstract class BaseController {
         }
         
         $result = array();
-        if ($defaults != null && sizeof($keys) != $sizeof($defaults))
+        if ($defaults != null && sizeof($keys) != sizeof($defaults))
             throw new \Exception("The number of provided keys and default values are not equal.");
         foreach($keys as $idx => $key) {
             $default = (isset($defaults) ? $defaults[$idx] : null);
@@ -39,8 +39,7 @@ abstract class BaseController {
        return $this->getFromArray($keys, $_POST, $defaults);
    }
 
-   
-   public function getGet($keys, $defaults = null) {
-    return $this->getFromArray($keys, $_GET, $defaults);
-}
+    public function getGet($keys, $defaults = null) {
+        return $this->getFromArray($keys, $_GET, $defaults);
+    }
 }
