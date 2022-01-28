@@ -389,7 +389,7 @@ p{
     padding: 15px 0 25px;
 }
 
-form {
+.flight-data form {
     width  :90%;
     height : 20%;
     margin : 0 auto;
@@ -403,14 +403,16 @@ form {
     grid-template-columns : repeat(2, 1fr);
     grid-template-rows    : 10em 1em 1em 1em; */
   }
-  label {
+  
+  .flight-data label {
     font-size: 15px;
     border       : 1px solid #333;
     border-radius: 3px;
     margin-right: 5px;
     margin-left: 5px;
   }
-  input {
+  
+  .flight-data input {
     font-size: 10px;
     border       : 1px solid #333;
     border-radius: 3px;
@@ -420,7 +422,7 @@ form {
     background : none;
     
   }
-  button {
+  .flight-data button {
     padding      : 5px;
     font         :  .6em sans-serif;
     border       : 1px solid #333;
@@ -429,9 +431,11 @@ form {
     cursor       : pointer;
     transform    : rotate(-1.5deg);
   }
-  .ui-helper-hidden-accessible{
+  
+  .ui-helper-hidden-accessible {
     display:none !important;
-}
+  }
+  
   .ui-autocomplete {
     position: absolute;
     top: 100%;
@@ -459,12 +463,13 @@ form {
     background-clip: padding-box;
     *border-right-width: 2px;
     *border-bottom-width: 2px;
-}
-  .ui-menu .ui-menu-item a{
+  }
+  
+  .ui-menu .ui-menu-item a {
     background:red;
     height:10px;
     font-size:8px;
-}
+  }
 
 /*---------------- ClaimTracker page ----------------*/
 .claim-tracker{
