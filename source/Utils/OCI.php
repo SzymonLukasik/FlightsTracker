@@ -15,8 +15,8 @@ class OCI {
        $this->conn = oci_connect(DB_USERNAME, DB_PASSWORD, DSN);
         if (!$this->conn) {
             throw new OCIConnectionError(
-                "Can not estabilish connection to the database. " 
-                . "Provide correct credentials.\n");
+                "Cannot estabilish connection to the database. " 
+                . "Please provide correct credentials and try again.\n");
         }
     }
     
@@ -58,8 +58,10 @@ class OCI {
     ) {
         $this->fetchAll($sql, $array, null, null, OCI_NUM);
         $nvars = func_num_args() - 1;
-        if (sizeof($array) != $nvars)
+    
+        if (sizeof($array) != $nvars) 
             throw new \Exception("Invalid number of variables.");
+        
         foreach ($vars as $i => &$var) {
             $var = $array[$i];
         }
@@ -73,6 +75,38 @@ class OCI {
         foreach ($vars as &$var) {
             $var = $var[0];
         }
+    }
+
+    public function insertRow(
+        string $table, array $vars, array $date_indices = null
+    ) {
+        $vars = array_values($vars); //TODO: może usunąć
+        $nvars = sizeof($vars);
+        $sql = "SELECT COUNT(*) 
+                  FROM user_tab_columns
+                 WHERE table_name = '" . strtoupper($table) . "'"
+        ;
+        $this->bindColsFlatten($sql, $table_arity);
+        if ($table_arity != $nvars || $nvars == 0)
+            throw new \Exception("Invalid number of variables.");
+    
+        $sql = 'INSERT INTO ' . $table .
+            ' VALUES(:val0'
+        ;
+        for ($i = 1; $i < $nvars; $i++) {
+            if (isset($date_indices) && in_array($i, $date_indices))
+                $sql .= ", TO_DATE(':val" .$i. "', 'YYYY-MM-DD')";
+            else
+                $sql .= ', :val'.$i;
+        }
+        $sql .= ')';
+
+        $compiled = oci_parse($this->conn, $sql);
+
+        foreach ($vars as $i => $var) {
+            oci_bind_by_name($compiled, ':val'.$i, $var);
+        }
+        oci_execute($compiled);
     }
 
 }

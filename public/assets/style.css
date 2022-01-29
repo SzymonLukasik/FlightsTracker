@@ -3,6 +3,11 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+
+/* TODO: zaadaptować wszystko na 360x640px*/
+/* TODO: poczyścić nieużywane własności */
+
+/*-------- Header --------*/
 .header{
     min-height: 100vh;
     width: 100%;
@@ -91,8 +96,6 @@ nav .fas{
     display: none;
 }
 
-
-
 @media(max-width: 700px){
     .text-box h1{
         font-size: 20px;
@@ -121,12 +124,80 @@ nav .fas{
         font-size: 22px;
         cursor: pointer;
     }
+    nav .fas{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
     .nav-links ul{
         padding: 30px;
     }
 }
 
-/*-------- services --------*/
+/*-------- Sub-header --------*/
+.sub-header{
+    height: 40vh;
+    width: 100%;
+    background-image: 
+        linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
+        url(images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+.sub-header h1{
+    margin-top: 100px;
+    /* margin-top: -105px;
+    font-size: 20px; */
+}
+
+/*-------- Footer --------*/
+.footer{
+    margin: 100px auto;
+    width: 80%;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+        url(images/faculty.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 150px 0;
+}
+.footer h1{
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 0;
+}
+.footer p{
+    color: #fff;
+}
+
+@media(max-width: 700px){
+    .footer h1{
+        font-size: 24px;
+    }
+}
+
+/*-------- Sub-footer --------*/
+.sub-footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    /* position:auto; */
+    bottom:0;
+}
+.sub-footer h4{
+    margin-bottom: 25px;
+    font-weight: 600;
+    /* position:absolute; */
+    bottom:0;
+}
+
+/*-------- Services --------*/
 .service{
     width: 80%;
     margin: auto;
@@ -182,7 +253,7 @@ h3{
     box-shadow: 0 0 20px 0px rgba(32, 66, 218, 0.9);
 }
 
-/*-------- team --------*/
+/*-------- Team --------*/
 .team{
     width: 80%;
     margin: auto;
@@ -217,91 +288,17 @@ h3{
     
 }
 @media(max-width: 700px){
-    .testimonial-col img{
+    .team-col img{
         margin-left: 0;
         margin-left: 15px;
     }
-}
-
-/*-------- faculty --------*/
-.disclaimer{
-    margin: 100px auto;
-    width: 80%;
-    background-image: 
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-        url(images/faculty.jpg);
-    background-position: center;
-    background-size: cover;
-    border-radius: 10px;
-    text-align: center;
-    padding: 150px 0;
-}
-.disclaimer h1{
-    color: #fff;
-    margin-bottom: 20px;
-    padding: 0;
-}
-.disclaimer p{
-    color: #fff;
-}
-
-@media(max-width: 700px){
-    .disclaimer h1{
-        font-size: 24px;
+    .team-col h3{
+        margin-top: 15px;
+        text-align: left;
     }
 }
 
-/*-------- footer --------*/
-.footer{
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-    position:absolute;
-    bottom:0;
-}
-.footer h4{
-    margin-bottom: 25px;
-    font-weight: 600;
-    position:absolute;
-    bottom:0;
-}
-
 /*---------------- Flight Data page ----------------*/
-.sub-header{
-    height: 15vh;
-    width: 100%;
-    background-image: 
-        linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-        url(images/banner.jpg);
-    background-position: center;
-    background-size: cover;
-    text-align: center;
-    color: #fff;
-}
-.sub-header h1{
-    margin-top: -105px;
-    font-size: 20px;
-}
-.about-us{
-    width: 80%;
-    margin: auto;
-    padding-top: 80px;
-    padding-bottom: 50px;
-}
-.about-col{
-    flex-basis: 48%;
-    padding: 30px 2px;
-}
-.about-col img{
-    width: 100%;
-}
-.about-col h1{
-    padding-top: 0
-}
-.about-col p{
-    padding: 15px 0 25px;
-}
-
 #flight_data {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -311,25 +308,25 @@ h3{
     margin-bottom: 50px;
   }
   
-  #flight_data td, #flight_data th {
+#flight_data td, #flight_data th {
     border: 1px solid #ddd;
     padding: 8px;
-  }
-  
-  #flight_data tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #flight_data tr:hover {background-color: #ddd;}
-  
-  #flight_data th {
+}
+
+#flight_data tr:nth-child(even){background-color: #f2f2f2;}
+
+#flight_data tr:hover {background-color: #ddd;}
+
+#flight_data th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #04AA6D;
     color: white;
-  }
+}
 
 
-/*-------- service --------*/
+/*-------- Services --------*/
 .statistics{
     width: 50%;
     margin: auto;
@@ -351,22 +348,6 @@ p{
     line-height: 22px;
     padding: 10px;
 }
-
-/*---------------- Subpages header ----------------*/
-/* .sub-header{
-    height: 50vh;
-    width: 100%;
-    background-image: 
-        linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),
-        url(images/control_room.jpg);
-    background-position: center;
-    background-size: cover;
-    text-align: center;
-    color: #fff;
-}
-.sub-header h1{
-    margin-top: 100px;
-} */
 
 /*---------------- Flight Data page ----------------*/
 .flight-data{
@@ -513,13 +494,72 @@ p{
     padding: 15px 0 25px;
 }
 
-/*---------------- Login page ----------------*/
-.login{
+/*---------------- Login and registration page ----------------*/
+.userform{
     margin: auto;
     padding-top: 80px;
     padding-bottom: 50px;
 }
-.loginbox{
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;;
+    font-size: 22px;
+}
+.userform p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.userform input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.userform input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+} 
+.userform input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #e8eafc;
+    color: #000;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.userform input[type="submit"]:hover{
+    cursor: pointer;
+    background: rgb(239,71,80);
+    transition: 0.5s;
+    color: #000;
+}
+.userform a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+.userform a:hover{
+    border: none;
+    color: rgb(239,71,80);
+    transition: 0.25s;
+}
+
+.userform-loginbox{
     margin: auto;
     width: 320px;
     height: 480px;
@@ -529,67 +569,13 @@ p{
     box-sizing: border-box;
     padding: 70px 30px;
 }
-
-.avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: relative;
-    top: -50px;
-    left: calc(50% - 50px);
-
-}
-
-h1{
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;;
-    font-size: 22px;
-}
-
-.loginbox p{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-.loginbox input{
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.loginbox input[type="text"], input[type="password"] {
-    border: none;
-    border-bottom: 1px solid #fff;
-    background: transparent;
-    outline: none;
-    height: 40px;
+.userform-registrationbox{
+    margin: auto;
+    width: 320px;
+    height: 750px;
+    background: #000;
     color: #fff;
-    font-size: 16px;
-} 
-.loginbox input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
-    background: #e8eafc;
-    color: #000;
-    font-size: 18px;
-    border-radius: 20px;
-}
-.loginbox input[type="submit"]:hover{
-    cursor: pointer;
-    background: rgb(239,71,80);
-    transition: 0.5s;
-    color: #000;
-}
-.loginbox a{
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 20px;
-    color: darkgrey;
-}
-.loginbox a:hover{
-    border: none;
-    color: rgb(239,71,80);
-    transition: 0.25s;
+    position: center;
+    box-sizing: border-box;
+    padding: 70px 30px;
 }

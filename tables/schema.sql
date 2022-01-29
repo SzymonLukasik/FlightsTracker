@@ -1,3 +1,4 @@
+/* TODO: zmienić nazwę tego pliku */
 DROP TABLE FlightAttendant CASCADE CONSTRAINTS;
 DROP TABLE PlannedFlight CASCADE CONSTRAINTS;
 DROP TABLE Claim CASCADE CONSTRAINTS;
@@ -43,8 +44,7 @@ CREATE TABLE Account (
     username   VARCHAR2(64)  PRIMARY KEY,
     pword      VARCHAR2(128) NOT NULL,
     first_name VARCHAR2(50)  NOT NULL,
-    surname    VARCHAR2(50)  NOT NULL,
-    birthdate  DATE          NOT NULL
+    surname    VARCHAR2(50)  NOT NULL
 );
 
 CREATE TABLE FlightComment (

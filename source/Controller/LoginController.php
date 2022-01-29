@@ -2,27 +2,33 @@
 
 namespace FlightsTracker\Controller;
 
-/** Account/login page controller. */
+/** Login page controller. */
 class LoginController extends \FlightsTracker\Controller\BaseController {
+
+    static bool $login_failed = false;
 
     public function index() {
         $view = new \FlightsTracker\View\LoginView();
         $view->index();
+        \FlightsTracker\Controller\LoginController::$login_failed = false;
     }
 
     public function tryLogin() {
-        $data = getCredentials();
+        $data = $this->getCredentials();
         $model = new \FlightsTracker\Model\LoginModel();
-        $_SESSION['userloggedin'] = $model->verifyCredentials($data);
+        $_SESSION['user_loggedin'] = $model->verifyCredentials($data);
 
-        if ($_SESSION['userloggedin'])
-            redirect(generateUrl('homepage'));
-        else 
-            redirect(generateUrl('login/index'));
+        if ($_SESSION['user_loggedin'])
+            $this->redirect($this->generateUrl('homepage/index'));
+        else {
+            \FlightsTracker\Controller\LoginController::$login_failed = true;
+            $this->redirect($this->generateUrl('login/index'));
+        }
     }
 
     public function logout() {
-        
+        $_SESSION['user_loggedin'] = false;
+        $this->redirect($this->generateUrl('homepage/index'));
     }
 
     private function getCredentials() {

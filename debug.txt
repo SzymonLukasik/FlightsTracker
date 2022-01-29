@@ -1,0 +1,141 @@
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = 
+_SESSION['user_loggedin'] = 
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = 
+_SESSION['user_loggedin'] = 
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+true = 1
+login_failed = 
+_SESSION['user_loggedin'] = 
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+login_failed = 
+_SESSION['user_loggedin'] = 
+{"user_loggedin":false}
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+{"user_loggedin":false} - {"username":"scott","pword":"tiger"} - {"username":"scott","password":"tiger"} 
+ login_failed = 
+_SESSION['user_loggedin'] = 
+{"user_loggedin":false}
+http://localhost:8001/login/index
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+http://localhost:8001/login/tryLogin
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+{"user_loggedin":false} - {"username":"scott","password":"tiger"} - {"username":"scott","password":"tiger"} 
+ login_failed = 
+_SESSION['user_loggedin'] = 1
+{"user_loggedin":true}
+http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":true} 
+ http://localhost:8001/login/logout
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/LoginController.php
+after logout - _SESSION[user_loggedin] = http://localhost:8001/
+/home/students/mismap/k/kk429629/FlightsTracker/source/Controller/HomepageController.php
+{"user_loggedin":false} 
+ 

@@ -18,7 +18,7 @@ abstract class BaseView {
         $this->renderHeadScript = $renderHeadScript;
         $this->renderHeader($path);
         $this->renderFile(TEMPLATES_PATH . $path);
-        $this->renderFooter();
+        $this->renderFooter($path);
     }
 
     public function renderScript($path) {
@@ -55,9 +55,10 @@ abstract class BaseView {
         $this->renderFile($headers_path . $header_type);
     }
 
-    /**
-     * Ładuje stopkę strony */
-    public function renderFooter() {
-        return $this->renderFile(TEMPLATES_PATH . 'footer');
+    /** Ładuje stopkę strony */
+    public function renderFooter($path) {
+        $footers_path = TEMPLATES_PATH . 'footers/';
+        $footer_type = ($path == 'homepage/index' ? 'footer' : 'sub-footer');
+        $this->renderFile($footers_path . $footer_type);
     }
 }

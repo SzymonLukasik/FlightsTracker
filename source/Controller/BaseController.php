@@ -10,8 +10,7 @@ abstract class BaseController {
 
     /** Generuje link. */
     public function generateUrl($name, $data = null) {
-        $router = new \FlightsTracker\Router();
-        $collection = $router->getCollection();
+        $collection = \FlightsTracker\Router\Router::getCollection();
         $route = $collection->get($name);
         if (isset($route)) {
             return $route->geneRateUrl($data);
