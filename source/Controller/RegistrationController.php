@@ -26,6 +26,13 @@ class RegistrationController extends \FlightsTracker\Controller\BaseController {
         }
     }
 
+    public function deleteAccount() {
+        $model = new \FlightsTracker\Model\RegistrationModel();
+        $model->deleteAccount($_SESSION['logged_user']);
+        
+        $this->redirect($this->generateUrl('homepage/index'));
+    }
+
     private function getRegistrationData() {
         $registration_keys = [
             'username',

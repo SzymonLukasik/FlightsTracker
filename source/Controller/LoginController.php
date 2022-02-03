@@ -5,20 +5,25 @@ namespace FlightsTracker\Controller;
 /** Login page controller. */
 class LoginController extends \FlightsTracker\Controller\BaseController {
 
-    static bool $login_failed = false;
+    static bool $login_failed = false; //TODO: niech to działa
+
+    // public function __construct() {
+    //     parent::__construct();
+    //     \FlightsTracker\Controller\LoginController::$login_failed = false;
+    // }
 
     public function index() {
         $view = new \FlightsTracker\View\LoginView();
-        $view->index();
         \FlightsTracker\Controller\LoginController::$login_failed = false;
+        $view->index();
     }
 
     public function tryLogin() {
         $data = $this->getCredentials();
         $model = new \FlightsTracker\Model\LoginModel();
-        $_SESSION['user_loggedin'] = $model->verifyCredentials($data);
+        $success = $model->verifyCredentials($data, $_SESSION['logged_user']);
 
-        if ($_SESSION['user_loggedin'])
+        if ($success)
             $this->redirect($this->generateUrl('homepage/index'));
         else {
             \FlightsTracker\Controller\LoginController::$login_failed = true;
@@ -27,7 +32,7 @@ class LoginController extends \FlightsTracker\Controller\BaseController {
     }
 
     public function logout() {
-        $_SESSION['user_loggedin'] = false;
+        unset($_SESSION['logged_user']);
         $this->redirect($this->generateUrl('homepage/index'));
     }
 

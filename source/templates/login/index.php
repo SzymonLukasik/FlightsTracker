@@ -3,8 +3,10 @@
     <div class="userform-loginbox">
         <img src="/assets/images/avatar.png" class="avatar">
         <form method="post" action= <?php echo $this->generateUrl('login/tryLogin')?>>
+        <!--TODO: czemu login_failed jest NULL...?-->
             <?php 
-                if (isset($_SESSION['user_loggedin']) && !$_SESSION['user_loggedin'])
+                debug('login_failed =' . \FlightsTracker\Controller\LoginController::$login_failed . "\n");
+                if (\FlightsTracker\Controller\LoginController::$login_failed)
                     echo '<h1>Invalid username or password.<br>Please try again.</h1>';
             ?>
             <p>Username</p>

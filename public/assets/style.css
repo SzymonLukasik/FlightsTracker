@@ -298,6 +298,29 @@ h3{
     }
 }
 
+/*-------- Services --------*/
+.statistics{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 0px;
+}
+h1{
+    font-size: 56px;
+    font-weight: 1000;
+}
+h2{
+    font-size: 20px;
+    font-weight: 500;
+}
+p{
+    color: rgb(0,0,0);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
 /*---------------- Flight Data page ----------------*/
 #flight_data {
     font-family: Arial, Helvetica, sans-serif;
@@ -325,30 +348,7 @@ h3{
     color: white;
 }
 
-
-/*-------- Services --------*/
-.statistics{
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    padding-top: 0px;
-}
-h1{
-    font-size: 56px;
-    font-weight: 1000;
-}
-h2{
-    font-size: 20px;
-    font-weight: 500;
-}
-p{
-    color: rgb(0,0,0);
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-}
-
+/*TODO: o co tu chodzi?*/
 /*---------------- Flight Data page ----------------*/
 .flight-data{
     width: 80%;
@@ -572,7 +572,7 @@ h1{
 .userform-registrationbox{
     margin: auto;
     width: 320px;
-    height: 750px;
+    height: 625px;
     background: #000;
     color: #fff;
     position: center;

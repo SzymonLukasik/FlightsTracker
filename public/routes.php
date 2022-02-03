@@ -105,4 +105,28 @@ $collection->add(
     )
 );
 
+$collection->add(
+    'registration/accdelete',
+    new Route(
+        HTTP_SERVER . "registration/accdelete",
+        array(
+            'file' => CONTROLLERS_PATH . 'RegistrationController.php',
+            'method' => 'deleteAccount',
+            'class' => '\FlightsTracker\Controller\RegistrationController'
+        )
+    )
+);
+
+$collection->add(
+    'forum/index',
+    new Route(
+        HTTP_SERVER . "forum/index",
+        array(
+            'file' => CONTROLLERS_PATH . 'ForumController.php',
+            'method' => 'index',
+            'class' => '\FlightsTracker\Controller\ForumController'
+        )
+    )
+);
+
 ?>

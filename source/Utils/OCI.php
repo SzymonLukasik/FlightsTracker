@@ -109,6 +109,20 @@ class OCI {
         oci_execute($compiled);
     }
 
+    public function deleteRow(
+        string $table, string $column, $value
+    ) {   
+        $sql = 'DELETE FROM ' . $table . 
+                ' WHERE ' . $column . " = ':val'"
+        ;
+        debug($sql);
+        $compiled = oci_parse($this->conn, $sql);
+
+        $val = is_string($value)? "'".$value."'" : $value;
+        oci_bind_by_name($compiled, ':val', $val);
+        $res= oci_execute($compiled);
+    }
+
 }
 
 ?>

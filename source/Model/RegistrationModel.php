@@ -23,11 +23,17 @@ class RegistrationModel extends \FlightsTracker\Model\BaseModel {
                  WHERE username = '" . $username . "'"
         ;
         $sql_count = 'SELECT COUNT(*) FROM (' . $sql . ')';
-        $this->oci->bindColsFlatten($sql_count, $fetched_accounts); /* TODO: tu $sql czy $sql_count jako 1szy args? */
+        $this->oci->bindColsFlatten($sql_count, $fetched_accounts);
 
         return $fetched_accounts == 0;
     }
 
+
+    public function deleteAccount($username) {
+        $this->oci->deleteRow('Account', 'username', $username);
+        unset($_SESSION['logged_user']);
+    }
+   
 }
 
 ?>

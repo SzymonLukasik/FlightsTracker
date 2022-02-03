@@ -1,4 +1,4 @@
-<!------- Service-like flights statistics -------->
+<!------- Service-like flight statistics -------->
 <section class="statistics">
     <div class="row">
         <div class="service-col">
@@ -43,7 +43,7 @@
 <?php 
     if ($this->data['n_filtered_flights'] > 0)
         require TEMPLATES_PATH . 'flight/data.php';
-    else 
+    else if (isset($this->data['n_filtered_flights']))
         require TEMPLATES_PATH . 'flight/no_data.php';
 ?>
 
