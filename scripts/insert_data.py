@@ -145,7 +145,7 @@ def insert_to_table(
 
 def initialize(db_config: DBConfig):
     print("Initializing database.\n")
-    execute_sql(db_config, "./tables/loty.sql")
+    execute_sql(db_config, "./tables/schema.sql")
 
 def insert(
     db_config: DBConfig,
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-i", "--init_only", 
         action="store_true",
-        help="Execute tables/loty.sql only. Don't insert data to the database."
+        help="Execute tables/schema.sql only. Don't insert data to the database."
     )
     parser.add_argument(
         "--flights_size",
